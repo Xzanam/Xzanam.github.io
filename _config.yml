@@ -1,21 +1,53 @@
-title: "Janam Shrestha"
-description: "Personal Portfolio and Projects"
-baseurl: "" # leave blank for username.github.io
-url: "https://xzanam.github.io"
-theme: jekyll-theme-minimal
-markdown: kramdown
+title: Janam Shrestha
 
-# Navigation links
-nav:
-  - name: "Home"
-    link: "/"
-  - name: "About"
-    link: "/about"
-  - name: "Projects"
-    link: "/projects"
+plugins:
+  - jekyll-bookshop
+  - jekyll-sitemap
+  - jekyll/tagging
 
-# Social
-social_links:
-  github: "https://github.com/xzanam"
-  linkedin: "https://linkedin.com/in/janam-shrestha"
+# Multiple bookshops can be used on one website,
+# or different production / staging locations.
+# bookshop_locations:
+#   - ../component-library
 
+include:
+  - _cloudcannon
+
+collections_dir: 'collections'
+
+collections:
+  pages:
+    output: true
+    permalink: /:title/
+  projects:
+    output: true
+    permalink: /project/:slug
+  testimonials:
+    output: false
+  posts:
+    output: true
+    permalink: /blog/:slug
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      type: pages
+      path: _pages/index.html
+    values:
+      permalink: /
+  - scope:
+      type: projects
+    values:
+      layout: project
+  - scope:
+      type: posts
+    values:
+      layout: post
+
+# Tags
+tag_page_dir: tag
+tag_page_layout: tag_page
+tag_permalink_style: /:title
