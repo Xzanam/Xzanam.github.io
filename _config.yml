@@ -2,7 +2,7 @@ title: "Janam Shrestha"
 description: "Personal Portfolio and Projects"
 baseurl: "" # leave blank for username.github.io
 url: "https://xzanam.github.io"
-theme: none
+theme: jekyll-theme-minimal
 markdown: kramdown
 
 # Navigation links
